@@ -1,12 +1,12 @@
-import certificateImage from '@/assets/images/home/certificateImage.png'
-import facilityImage from '@/assets/images/home/who-we-are-facility.png'
+import Foundry_Solutions from '@/assets/images/home/Foundry_Solutions.png'
+import Social_Responsibility from '@/assets/images/home/Social_Responsibility.png'
 import { Container } from '@/components/common/Container'
 import { NewsMediaCard } from '@/components/home/NewsMediaCard'
 
 const newsItems = [
   {
     id: 'industry-exhibition',
-    image: facilityImage,
+    image: Foundry_Solutions,
     imageAlt: 'INEXO representatives at an industry exhibition',
     title: 'INEXO Showcases Advanced Foundry Solutions at Industry Exhibition',
     description:
@@ -15,7 +15,7 @@ const newsItems = [
   },
   {
     id: 'csr-community',
-    image: certificateImage,
+    image: Social_Responsibility,
     imageAlt: 'INEXO team supporting a community program',
     title: 'Supporting Communities Through Social Responsibility',
     description:

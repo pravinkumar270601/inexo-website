@@ -1,7 +1,9 @@
 import { lazy, Suspense } from 'react'
 import { Route, Routes } from 'react-router-dom'
+import { SiteLayout } from '@/components/common/SiteLayout'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
+const SolutionsPage = lazy(() => import('@/pages/SolutionsPage'))
 
 function RouteFallback() {
   return (
@@ -18,7 +20,10 @@ export function AppRouter() {
   return (
     <Suspense fallback={<RouteFallback />}>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route element={<SiteLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/solutions" element={<SolutionsPage />} />
+        </Route>
       </Routes>
     </Suspense>
   )

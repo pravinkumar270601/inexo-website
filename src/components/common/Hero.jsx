@@ -3,7 +3,7 @@ import heroPoster from '@/assets/hero.png'
 import heroArrowRight from '@/assets/images/home/heroarrow-right.svg'
 import facilityImage from '@/assets/images/home/who-we-are-facility.png'
 
-const slides = [
+const defaultSlides = [
   {
     id: 1,
     title: 'Leading Foundry Feeding Systems Manufacturers',
@@ -27,32 +27,39 @@ const slides = [
   },
 ]
 
-export function HomeHero() {
+export function Hero({ slides = defaultSlides }) {
+  const heroSlides = slides.length > 0 ? slides : defaultSlides
   const [currentIndex, setCurrentIndex] = useState(0)
   const [videoError, setVideoError] = useState(false)
   const [direction, setDirection] = useState('next')
 
   useEffect(() => {
+    if (currentIndex >= heroSlides.length) {
+      setCurrentIndex(0)
+    }
+  }, [currentIndex, heroSlides.length])
+
+  useEffect(() => {
     const timer = window.setInterval(() => {
-      setCurrentIndex((value) => (value + 1) % slides.length)
+      setCurrentIndex((value) => (value + 1) % heroSlides.length)
       setDirection('next')
       setVideoError(false)
     }, 7000)
 
     return () => window.clearInterval(timer)
-  }, [])
+  }, [heroSlides.length])
 
-  const currentSlide = slides[currentIndex]
+  const currentSlide = heroSlides[currentIndex]
 
   const goToNext = () => {
     setDirection('next')
-    setCurrentIndex((value) => (value + 1) % slides.length)
+    setCurrentIndex((value) => (value + 1) % heroSlides.length)
     setVideoError(false)
   }
 
   const goToPrevious = () => {
     setDirection('prev')
-    setCurrentIndex((value) => (value - 1 + slides.length) % slides.length)
+    setCurrentIndex((value) => (value - 1 + heroSlides.length) % heroSlides.length)
     setVideoError(false)
   }
 
@@ -103,14 +110,16 @@ export function HomeHero() {
                 {currentSlide.title}
               </h1>
 
-              <div className="mt-8 flex items-center gap-5">
-                <button
-                  className="button-label-primary min-h-[48px] rounded-[100px] bg-brand-accent-yellow px-5 py-3 transition-colors duration-200 hover:bg-[#ffc933] sm:min-h-[56px] sm:px-7 sm:py-3.5 lg:min-h-[clamp(56px,4.4vw,76px)] lg:h-auto lg:min-w-[clamp(190px,15.3vw,263px)] lg:px-6 lg:py-3"
-                  type="button"
-                >
-                  {currentSlide.ctaLabel}
-                </button>
-              </div>
+              {currentSlide.ctaLabel ? (
+                <div className="mt-8 flex items-center gap-5">
+                  <button
+                    className="button-label-primary min-h-[48px] rounded-[100px] bg-brand-accent-yellow px-5 py-3 transition-colors duration-200 hover:bg-[#ffc933] sm:min-h-[56px] sm:px-7 sm:py-3.5 lg:min-h-[clamp(56px,4.4vw,76px)] lg:h-auto lg:min-w-[clamp(190px,15.3vw,263px)] lg:px-6 lg:py-3"
+                    type="button"
+                  >
+                    {currentSlide.ctaLabel}
+                  </button>
+                </div>
+              ) : null}
             </div>
 
             <div className="absolute bottom-5 right-4 flex items-center gap-3 sm:bottom-7 sm:right-8 sm:gap-5 lg:bottom-11 lg:right-35 lg:gap-8 min-[1728px]:gap-[21px]">
@@ -126,7 +135,7 @@ export function HomeHero() {
               </button>
 
               <div className="flex items-center gap-[6px] sm:gap-[8px]">
-                {slides.map((slide, index) => (
+                {heroSlides.map((slide, index) => (
                   <button
                     aria-label={`Go to slide ${index + 1}`}
                     className={`rounded-full transition-all duration-200 cursor-pointer ${

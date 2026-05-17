@@ -1,26 +1,48 @@
 import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import logo from '@/assets/images/brand/inexo-logo.svg'
 import { Container } from '@/components/common/Container'
 
-const navItems = ['Products', 'Solutions', 'News & Events', 'Contact us', 'Careers']
+const navItems = [
+  { label: 'Products'},
+  { label: 'Solutions', path: '/solutions' },
+  { label: 'News & Events' },
+  { label: 'Contact us' },
+  { label: 'Careers' },
+]
 
-export function HomeNavbar() {
+export function Nav() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <header className="border-b border-[#d8d8d8] bg-[#f5f5f5]">
       <Container className="flex h-[82px] items-center justify-between gap-6 sm:h-[96px] lg:h-[126px]">
-        <a aria-label="Inexo Home" className="shrink-0" href="#">
+        <Link aria-label="Inexo Home" className="shrink-0" to="/">
           <img alt="Inexo logo" className="h-[64px] w-[64px] object-contain sm:h-[78px] sm:w-[78px] lg:h-[104px] lg:w-[104px]" src={logo} />
-        </a>
+        </Link>
 
         <nav aria-label="Primary navigation" className="hidden flex-1 justify-center md:flex">
           <ul className="flex items-center gap-[28px] md:gap-[34px] lg:gap-[45px] xl:gap-[56px] 2xl:gap-[76px]">
             {navItems.map((item) => (
-              <li key={item}>
-                <a className="nav-menu-item-text transition-opacity duration-200 hover:opacity-70" href="#">
-                  {item}
-                </a>
+              <li key={item.label}>
+                {item.path ? (
+                  <NavLink
+                    className={({ isActive }) =>
+                      `nav-menu-item-text relative inline-flex h-[82px] items-center transition-opacity duration-200 hover:opacity-70 sm:h-[96px] lg:h-[126px] ${
+                        isActive
+                          ? 'after:absolute after:bottom-[10px] after:left-0 after:h-[6px] after:w-full after:bg-[#FFB400] after:content-[\'\']'
+                          : ''
+                      }`
+                    }
+                    to={item.path}
+                  >
+                    {item.label}
+                  </NavLink>
+                ) : (
+                  <a className="nav-menu-item-text transition-opacity duration-200 hover:opacity-70" href="#">
+                    {item.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
@@ -61,10 +83,22 @@ export function HomeNavbar() {
           <Container className="py-4">
             <ul className="flex flex-col gap-3 text-lg text-[#1f1f1f]">
               {navItems.map((item) => (
-                <li key={item}>
-                  <a className="block py-1 font-medium" href="#" onClick={() => setMenuOpen(false)}>
-                    {item}
-                  </a>
+                <li key={item.label}>
+                  {item.path ? (
+                    <NavLink
+                      className={({ isActive }) =>
+                        `block py-1 font-medium ${isActive ? 'text-brand-blue underline decoration-[6px] underline-offset-[8px] decoration-[#FFB400]' : ''}`
+                      }
+                      onClick={() => setMenuOpen(false)}
+                      to={item.path}
+                    >
+                      {item.label}
+                    </NavLink>
+                  ) : (
+                    <a className="block py-1 font-medium" href="#" onClick={() => setMenuOpen(false)}>
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -1,6 +1,6 @@
 import { Container } from '@/components/common/Container'
+import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { SectionLabel } from '@/components/common/SectionLabel'
-import { FoundryProductCard } from '@/components/home/FoundryProductCard'
 import fedexoImage from '@/assets/images/home/FEDEXO.svg'
 import fedinImage from '@/assets/images/home/FEDIN.svg'
 import fedpourImage from '@/assets/images/home/FEDPOUR.svg'

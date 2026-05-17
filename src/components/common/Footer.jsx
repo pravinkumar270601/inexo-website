@@ -19,10 +19,10 @@ const socialLinks = [
   { label: 'Google', href: '#', icon: googleIcon },
 ]
 
-export function HomeFooter() {
+export function Footer() {
   return (
     <footer className=" bg-brand-blue text-white pb-8 pt-8">
-    {/* <footer className="min-h-[692px] bg-brand-blue text-white"> */}
+      {/* <footer className="min-h-[692px] bg-brand-blue text-white"> */}
 
       <div className="site-container px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-7">
         <div className="grid gap-10 lg:grid-cols-[1.5fr_0.8fr_1.5fr] lg:gap-12">
