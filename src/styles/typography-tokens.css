@@ -1,0 +1,100 @@
+:root {
+  --font-family-primary-sans: 'IBM Plex Sans', sans-serif;
+  --font-family-display-serif: 'IBM Plex Serif', serif;
+
+  --font-size-display-hero: 64px;
+  --line-height-display-hero: 84px;
+  --font-weight-display-hero: 500;
+
+  --font-size-heading-section: 48px;
+  --line-height-heading-section: 73px;
+  --font-weight-heading-section: 700;
+
+  --font-size-body-large: 24px;
+  --line-height-body-large: 36px;
+  --font-weight-body-large: 400;
+
+  --font-size-heading-centered: 48px;
+  --line-height-heading-centered: normal;
+  --font-weight-heading-centered: 600;
+
+  --font-size-body-centered: 24px;
+  --line-height-body-centered: 32px;
+  --font-weight-body-centered: 400;
+
+  --font-size-title-on-dark: 36px;
+  --line-height-title-on-dark: normal;
+  --font-weight-title-on-dark: 600;
+
+  --font-size-foundry-product-card-title: 36px;
+  --line-height-foundry-product-card-title: normal;
+  --font-weight-foundry-product-card-title: 600;
+
+  --font-size-foundry-product-card-description: 18px;
+  --line-height-foundry-product-card-description: normal;
+  --font-weight-foundry-product-card-description: 400;
+
+  --font-size-foundry-product-card-cta: 24px;
+  --line-height-foundry-product-card-cta: normal;
+  --font-weight-foundry-product-card-cta: 600;
+
+  --font-size-purpose-card-title: 28px;
+  --line-height-purpose-card-title: normal;
+  --font-weight-purpose-card-title: 700;
+
+  --font-size-purpose-card-description: 20px;
+  --line-height-purpose-card-description: 30px;
+  --font-weight-purpose-card-description: 400;
+
+  --font-size-body-on-dark: 18px;
+  --line-height-body-on-dark: normal;
+  --font-weight-body-on-dark: 400;
+
+  --font-size-button-primary: 24px;
+  --line-height-button-primary: normal;
+  --font-weight-button-primary: 700;
+
+  --font-size-navigation-menu: 24px;
+  --line-height-navigation-menu: normal;
+  --font-weight-navigation-menu: 457;
+
+  --font-size-section-label: 20px;
+  --line-height-section-label: normal;
+  --font-weight-section-label: 700;
+}
+
+@media (max-width: 1279px) {
+  :root {
+    --font-size-display-hero: 52px;
+    --line-height-display-hero: 68px;
+    --font-size-heading-section: 42px;
+    --line-height-heading-section: 62px;
+    --font-size-body-large: 22px;
+    --line-height-body-large: 34px;
+    --font-size-heading-centered: 42px;
+    --font-size-body-centered: 22px;
+    --line-height-body-centered: 32px;
+    --font-size-title-on-dark: 32px;
+    --font-size-body-on-dark: 17px;
+    --font-size-button-primary: 20px;
+    --font-size-navigation-menu: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --font-size-display-hero: 36px;
+    --line-height-display-hero: 48px;
+    --font-size-heading-section: 32px;
+    --line-height-heading-section: 46px;
+    --font-size-body-large: 18px;
+    --line-height-body-large: 28px;
+    --font-size-heading-centered: 32px;
+    --font-size-body-centered: 18px;
+    --line-height-body-centered: 28px;
+    --font-size-title-on-dark: 26px;
+    --font-size-body-on-dark: 16px;
+    --font-size-button-primary: 18px;
+    --font-size-navigation-menu: 18px;
+  }
+}

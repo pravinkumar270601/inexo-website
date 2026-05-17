@@ -1,0 +1,55 @@
+:root {
+  --color-brand-accent-yellow: #ffb400;
+  --color-brand-primary-blue: #00307a;
+  --color-surface-foundry-product-card-panel: rgba(0, 48, 122, 0.6);
+  --color-text-foundry-product-card-title: var(--color-neutral-white);
+  --color-text-foundry-product-card-description: var(--color-neutral-white);
+  --color-text-foundry-product-card-cta: var(--color-neutral-white);
+  --color-text-purpose-card-title: #00307a;
+  --color-text-purpose-card-description: rgba(0, 48, 122, 0.78);
+  --color-text-section-label: #00307a;
+  --color-surface-page: #f7f9fb;
+  --color-neutral-white: #fff;
+  --color-neutral-black: #000;
+  --color-text-primary: #000;
+}
+
+.text-brand-accent-yellow,
+.text-brand-yellow {
+  color: var(--color-brand-accent-yellow);
+}
+
+.text-brand-primary-blue,
+.text-brand-blue {
+  color: var(--color-brand-primary-blue);
+}
+
+.text-neutral-white,
+.text-brand-white {
+  color: var(--color-neutral-white);
+}
+
+.text-neutral-black,
+.text-brand-black {
+  color: var(--color-neutral-black);
+}
+
+.bg-brand-accent-yellow,
+.bg-brand-yellow {
+  background-color: var(--color-brand-accent-yellow);
+}
+
+.bg-brand-primary-blue,
+.bg-brand-blue {
+  background-color: var(--color-brand-primary-blue);
+}
+
+.bg-surface-page,
+.bg-surface-light {
+  background-color: var(--color-surface-page);
+}
+
+.bg-neutral-white,
+.bg-brand-white {
+  background-color: var(--color-neutral-white);
+}
