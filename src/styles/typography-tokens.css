@@ -26,6 +26,16 @@
   --line-height-title-on-dark: normal;
   --font-weight-title-on-dark: 600;
 
+  --font-family-managing-director-desk-heading: var(--font-family-display-serif);
+  --font-size-managing-director-desk-heading: 48px;
+  --line-height-managing-director-desk-heading: 48px;
+  --font-weight-managing-director-desk-heading: 700;
+
+  --font-family-managing-director-desk-body: var(--font-family-display-serif);
+  --font-size-managing-director-desk-body: 24px;
+  --line-height-managing-director-desk-body: 29px;
+  --font-weight-managing-director-desk-body: 300;
+
   --font-size-foundry-product-card-title: 36px;
   --line-height-foundry-product-card-title: normal;
   --font-weight-foundry-product-card-title: 600;
@@ -45,6 +55,38 @@
   --font-size-purpose-card-description: 20px;
   --line-height-purpose-card-description: 30px;
   --font-weight-purpose-card-description: 400;
+
+  --font-size-news-media-card-title: 24px;
+  --line-height-news-media-card-title: 37px;
+  --font-weight-news-media-card-title: 500;
+
+  --font-size-news-media-card-description: 16px;
+  --line-height-news-media-card-description: 27px;
+  --font-weight-news-media-card-description: 400;
+
+  --font-size-news-media-card-date: 21px;
+  --line-height-news-media-card-date: 40px;
+  --font-weight-news-media-card-date: 700;
+
+  --font-size-news-media-card-read-more: 20px;
+  --line-height-news-media-card-read-more: 1;
+  --font-weight-news-media-card-read-more: 700;
+
+  --font-size-footer-address: 24px;
+  --line-height-footer-address: 1;
+  --font-weight-footer-address: 400;
+
+  --font-size-footer-section-heading: 40px;
+  --line-height-footer-section-heading: 1;
+  --font-weight-footer-section-heading: 700;
+
+  --font-size-footer-office-heading: 28px;
+  --line-height-footer-office-heading: 1;
+  --font-weight-footer-office-heading: 700;
+
+  --font-size-footer-submit-button: 24px;
+  --line-height-footer-submit-button: 1;
+  --font-weight-footer-submit-button: 700;
 
   --font-size-body-on-dark: 18px;
   --line-height-body-on-dark: normal;
@@ -75,6 +117,10 @@
     --font-size-body-centered: 22px;
     --line-height-body-centered: 32px;
     --font-size-title-on-dark: 32px;
+    --font-size-managing-director-desk-heading: 42px;
+    --line-height-managing-director-desk-heading: 42px;
+    --font-size-managing-director-desk-body: 22px;
+    --line-height-managing-director-desk-body: 28px;
     --font-size-body-on-dark: 17px;
     --font-size-button-primary: 20px;
     --font-size-navigation-menu: 20px;
@@ -93,6 +139,10 @@
     --font-size-body-centered: 18px;
     --line-height-body-centered: 28px;
     --font-size-title-on-dark: 26px;
+    --font-size-managing-director-desk-heading: 32px;
+    --line-height-managing-director-desk-heading: 36px;
+    --font-size-managing-director-desk-body: 18px;
+    --line-height-managing-director-desk-body: 24px;
     --font-size-body-on-dark: 16px;
     --font-size-button-primary: 18px;
     --font-size-navigation-menu: 18px;

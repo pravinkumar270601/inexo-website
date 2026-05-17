@@ -7,7 +7,17 @@
   --color-text-foundry-product-card-cta: var(--color-neutral-white);
   --color-text-purpose-card-title: #00307a;
   --color-text-purpose-card-description: rgba(0, 48, 122, 0.78);
+  --color-text-news-media-card-title: #00307a;
+  --color-text-news-media-card-description: rgba(0, 48, 122, 0.85);
+  --color-text-news-media-card-date: #adadad;
+  --color-text-news-media-card-read-more: #00307a;
   --color-text-section-label: #00307a;
+  --color-text-managing-director-desk-heading: var(--color-neutral-white);
+  --color-text-managing-director-desk-body: rgba(255, 255, 255, 0.85);
+  --color-text-footer-address: rgba(255, 255, 255, 0.95);
+  --color-text-footer-section-heading: var(--color-neutral-white);
+  --color-text-footer-office-heading: var(--color-neutral-white);
+  --color-text-footer-submit-button: #030f95;
   --color-surface-page: #f7f9fb;
   --color-neutral-white: #fff;
   --color-neutral-black: #000;

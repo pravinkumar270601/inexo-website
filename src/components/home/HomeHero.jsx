@@ -1,38 +1,41 @@
 import { useEffect, useState } from 'react'
 import heroPoster from '@/assets/hero.png'
 import heroArrowRight from '@/assets/images/home/heroarrow-right.svg'
+import facilityImage from '@/assets/images/home/who-we-are-facility.png'
 
 const slides = [
   {
     id: 1,
     title: 'Leading Foundry Feeding Systems Manufacturers',
     ctaLabel: 'Watch Our Video',
-    videoSrc: '/videos/inexo-foundry-1.mp4',
-    poster: heroPoster,
+    videoSrc: '/videos/INEXO_COMPANY VIDEO_27_01_2026.mp4',
+    poster: facilityImage,
   },
   {
     id: 2,
     title: 'Precision Solutions For Modern Foundry Operations',
     ctaLabel: 'Watch Our Video',
-    videoSrc: '/videos/inexo-foundry-2.mp4',
-    poster: heroPoster,
+    imageSrc: facilityImage,
   },
   {
     id: 3,
     title: 'Reliable Engineering Backed By Proven Performance',
     ctaLabel: 'Watch Our Video',
-    videoSrc: '/videos/inexo-foundry-3.mp4',
-    poster: heroPoster,
+    // videoSrc: '/videos/inexo-foundry-3.mp4',
+    // poster: heroPoster,
+    imageSrc: facilityImage,
   },
 ]
 
 export function HomeHero() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [videoError, setVideoError] = useState(false)
+  const [direction, setDirection] = useState('next')
 
   useEffect(() => {
     const timer = window.setInterval(() => {
       setCurrentIndex((value) => (value + 1) % slides.length)
+      setDirection('next')
       setVideoError(false)
     }, 7000)
 
@@ -42,16 +45,19 @@ export function HomeHero() {
   const currentSlide = slides[currentIndex]
 
   const goToNext = () => {
+    setDirection('next')
     setCurrentIndex((value) => (value + 1) % slides.length)
     setVideoError(false)
   }
 
   const goToPrevious = () => {
+    setDirection('prev')
     setCurrentIndex((value) => (value - 1 + slides.length) % slides.length)
     setVideoError(false)
   }
 
   const goToSlide = (index) => {
+    setDirection(index > currentIndex ? 'next' : 'prev')
     setCurrentIndex(index)
     setVideoError(false)
   }
@@ -60,41 +66,51 @@ export function HomeHero() {
     <section className="bg-white">
       <div className="w-full">
         <div className="relative isolate min-h-[420px] h-[clamp(420px,52vw,807px)] overflow-hidden min-[1728px]:h-[807px]">
-          {!videoError ? (
-            <video
-              autoPlay
-              className="absolute inset-0 h-full w-full object-cover"
-              loop
-              muted
-              onError={() => setVideoError(true)}
-              playsInline
-              poster={currentSlide.poster}
-            >
-              <source src={currentSlide.videoSrc} type="video/mp4" />
-            </video>
-          ) : (
-            <img
-              alt="Inexo foundry"
-              className="absolute inset-0 h-full w-full object-cover"
-              src={currentSlide.poster}
-            />
-          )}
+          <div className={`absolute inset-0 ${direction === 'next' ? 'hero-media-slide-in-right' : 'hero-media-slide-in-left'}`} key={currentSlide.id}>
+            {currentSlide.imageSrc ? (
+              <img
+                alt="Inexo"
+                className="absolute inset-0 h-full w-full object-cover"
+                src={currentSlide.imageSrc}
+              />
+            ) : !videoError ? (
+              <video
+                autoPlay
+                className="absolute inset-0 h-full w-full object-cover"
+                loop
+                muted
+                onError={() => setVideoError(true)}
+                playsInline
+                poster={currentSlide.poster}
+              >
+                <source src={currentSlide.videoSrc} type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                alt="Inexo foundry"
+                className="absolute inset-0 h-full w-full object-cover"
+                src={currentSlide.poster}
+              />
+            )}
+          </div>
 
           <div className="absolute inset-0 bg-[rgba(0,48,122,0.63)]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a2d57]/72 via-[#0a2d57]/48 to-transparent" />
 
           <div className="relative z-10 flex h-full flex-col justify-center px-5 pb-8 pt-10 sm:px-8 sm:pb-10 lg:pl-[39px] lg:pr-[140px] lg:pb-[44px]">
-            <h1 className="type-1 w-full max-w-3xl min-[1728px]:max-w-[1091px]">
-              {currentSlide.title}
-            </h1>
+            <div className={`${direction === 'next' ? 'hero-copy-slide-in-right' : 'hero-copy-slide-in-left'}`} key={`copy-${currentSlide.id}`}>
+              <h1 className="type-1 w-full max-w-3xl min-[1728px]:max-w-[1091px]">
+                {currentSlide.title}
+              </h1>
 
-            <div className="mt-8 flex items-center gap-5">
-              <button
-                className="button-label-primary min-h-[48px] rounded-[100px] bg-brand-accent-yellow px-5 py-3 transition-colors duration-200 hover:bg-[#ffc933] sm:min-h-[56px] sm:px-7 sm:py-3.5 lg:h-[clamp(56px,4.4vw,76px)] lg:w-[clamp(190px,15.3vw,263px)] lg:px-0 lg:py-0"
-                type="button"
-              >
-                {currentSlide.ctaLabel}
-              </button>
+              <div className="mt-8 flex items-center gap-5">
+                <button
+                  className="button-label-primary min-h-[48px] rounded-[100px] bg-brand-accent-yellow px-5 py-3 transition-colors duration-200 hover:bg-[#ffc933] sm:min-h-[56px] sm:px-7 sm:py-3.5 lg:min-h-[clamp(56px,4.4vw,76px)] lg:h-auto lg:min-w-[clamp(190px,15.3vw,263px)] lg:px-6 lg:py-3"
+                  type="button"
+                >
+                  {currentSlide.ctaLabel}
+                </button>
+              </div>
             </div>
 
             <div className="absolute bottom-5 right-4 flex items-center gap-3 sm:bottom-7 sm:right-8 sm:gap-5 lg:bottom-11 lg:right-35 lg:gap-8 min-[1728px]:gap-[21px]">
