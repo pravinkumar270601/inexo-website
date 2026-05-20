@@ -103,6 +103,59 @@
   --font-size-section-label: 20px;
   --line-height-section-label: normal;
   --font-weight-section-label: 700;
+
+  /* Solutions category title token (used in SolutionsShowcase) */
+  --font-family-solutions-category-title: var(--font-family-display-serif);
+  --font-size-solutions-category-title: 32px;
+  --line-height-solutions-category-title: 55px;
+  --font-weight-solutions-category-title: 700;
+  --letter-spacing-solutions-category-title: 0px;
+
+  /* Solution item title tokens (used for {solution.title}) */
+  --font-family-solution-title: var(--font-family-display-serif);
+  --font-size-solution-title: 24px;
+  --line-height-solution-title: 55px;
+  --font-weight-solution-title: 500;
+  --font-weight-solution-title-caps: 700;
+  --letter-spacing-solution-title: 0px;
+
+  /* Solution main title tokens (used for active solution header) */
+  --font-family-solution-main-title: var(--font-family-display-serif);
+  --font-size-solution-main-title: 28px;
+  --line-height-solution-main-title: 55px;
+  --font-weight-solution-main-title: 500;
+  --letter-spacing-solution-main-title: 0px;
+
+  /* Solution summary body tokens (used for activeSolution.summary) */
+  --font-family-solution-summary: var(--font-family-primary-sans);
+  --font-size-solution-summary: 20px;
+  --line-height-solution-summary: 36px;
+  --font-weight-solution-summary: 400;
+  --letter-spacing-solution-summary: 0px;
+
+  --font-family-solution-accordion-label: var(--font-family-primary-sans);
+  --font-size-solution-accordion-label: 24px;
+  --line-height-solution-accordion-label: 65px;
+  --font-weight-solution-accordion-label: 600;
+  --letter-spacing-solution-accordion-label: 0px;
+
+  --font-family-solution-accordion-value: var(--font-family-primary-sans);
+  --font-size-solution-accordion-value: 24px;
+  --line-height-solution-accordion-value: 65px;
+  --font-weight-solution-accordion-value: 400;
+  --letter-spacing-solution-accordion-value: 0px;
+
+  --font-family-products-benefits-group-title: var(--font-family-display-serif);
+  --font-size-products-benefits-group-title: 30px;
+  --line-height-products-benefits-group-title: 55px;
+  --font-weight-products-benefits-group-title: 500;
+  --letter-spacing-products-benefits-group-title: 0px;
+
+  --font-family-products-benefits-list: var(--font-family-primary-sans);
+  --font-size-products-benefits-list: 24px;
+  --line-height-products-benefits-list: 45px;
+  --font-weight-products-benefits-list: 400;
+  --letter-spacing-products-benefits-list: 0px;
 }
 
 @media (max-width: 1279px) {

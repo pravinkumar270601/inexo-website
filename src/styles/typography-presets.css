@@ -205,6 +205,100 @@
   line-height: var(--line-height-section-label);
 }
 
+/* Solutions category title used in the left column list */
+.solutions-category-title {
+  color: var(--color-brand-primary-blue);
+  font-family: var(--font-family-solutions-category-title);
+  font-size: var(--font-size-solutions-category-title);
+  font-style: normal;
+  font-weight: var(--font-weight-solutions-category-title);
+  line-height: var(--line-height-solutions-category-title);
+  letter-spacing: var(--letter-spacing-solutions-category-title);
+}
+
+/* Solution item title (left list) */
+.solution-title {
+  color: var(--color-brand-primary-blue);
+  font-family: var(--font-family-solution-title);
+  font-size: var(--font-size-solution-title);
+  font-style: normal;
+  font-weight: var(--font-weight-solution-title);
+  line-height: var(--line-height-solution-title);
+  letter-spacing: var(--letter-spacing-solution-title);
+  display: inline;
+}
+
+/* Main solution title (page header for active solution) */
+.solution-main-title {
+  color: var(--color-brand-primary-blue);
+  font-family: var(--font-family-solution-main-title);
+  font-size: var(--font-size-solution-main-title);
+  font-style: normal;
+  font-weight: var(--font-weight-solution-main-title);
+  line-height: var(--line-height-solution-main-title);
+  letter-spacing: var(--letter-spacing-solution-main-title);
+}
+
+/* Solution summary (body text for active solution) */
+.solution-summary {
+  color: var(--color-text-solution-summary);
+  font-family: var(--font-family-solution-summary);
+  font-size: var(--font-size-solution-summary);
+  font-style: normal;
+  font-weight: var(--font-weight-solution-summary);
+  line-height: var(--line-height-solution-summary);
+  letter-spacing: var(--letter-spacing-solution-summary);
+}
+
+.solution-accordion-label {
+  color: var(--color-text-solution-accordion-label);
+  font-family: var(--font-family-solution-accordion-label);
+  font-size: var(--font-size-solution-accordion-label);
+  font-style: normal;
+  font-weight: var(--font-weight-solution-accordion-label);
+  line-height: var(--line-height-solution-accordion-label);
+  letter-spacing: var(--letter-spacing-solution-accordion-label);
+}
+
+.solution-accordion-value {
+  color: var(--color-text-solution-accordion-value);
+  font-family: var(--font-family-solution-accordion-value);
+  font-size: var(--font-size-solution-accordion-value);
+  font-style: normal;
+  font-weight: var(--font-weight-solution-accordion-value);
+  line-height: var(--line-height-solution-accordion-value);
+  letter-spacing: var(--letter-spacing-solution-accordion-value);
+}
+
+.products-benefits-group-title {
+  color: var(--color-text-products-benefits-group-title);
+  font-family: var(--font-family-products-benefits-group-title);
+  font-size: var(--font-size-products-benefits-group-title);
+  font-style: normal;
+  font-weight: var(--font-weight-products-benefits-group-title);
+  line-height: var(--line-height-products-benefits-group-title);
+  letter-spacing: var(--letter-spacing-products-benefits-group-title);
+}
+
+.products-benefits-list {
+  color: var(--color-text-products-benefits-list);
+  font-family: var(--font-family-products-benefits-list);
+  font-size: var(--font-size-products-benefits-list);
+  font-style: normal;
+  font-weight: var(--font-weight-products-benefits-list);
+  line-height: var(--line-height-products-benefits-list);
+  letter-spacing: var(--letter-spacing-products-benefits-list);
+}
+
+.products-benefits-list-item::marker {
+  color: var(--color-marker-products-benefits-list);
+}
+
+/* Uppercase words inside solution titles should be bold */
+.solution-title-caps {
+  font-weight: var(--font-weight-solution-title-caps);
+}
+
 .footer-address-text {
   color: var(--color-text-footer-address);
   font-family: var(--font-family-display-serif);

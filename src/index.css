@@ -315,3 +315,24 @@ input {
     transform: none;
   }
 }
+
+/* SolutionsShowcase: ensure list markers (bullets) use brand blue */
+.solutions-showcase li::marker {
+  /* Force a consistent marker appearance inside the SolutionsShowcase component */
+  color: var(--color-brand-primary-blue);
+  /* Scale relative to the list text so bullets look consistent across lists */
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+/* Keep casting/process accordion list item marker sizing in sync with products/benefits list */
+.solutions-showcase .solution-accordion-list-item {
+  font-size: var(--font-size-products-benefits-list);
+}
+
+/* Ensure product-benefits specific marker rule doesn't override our color/size inside this component */
+.solutions-showcase .products-benefits-list-item::marker {
+  color: var(--color-brand-primary-blue);
+  font-size: 0.85em;
+  font-weight: 600;
+}
