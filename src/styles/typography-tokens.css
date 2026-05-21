@@ -98,7 +98,16 @@
 
   --font-size-navigation-menu: 24px;
   --line-height-navigation-menu: normal;
+
+  --font-size-hero-title-on-light: 64px;
+  --line-height-hero-title-on-light: 84px;
+  --font-weight-hero-title-on-light: 700;
   --font-weight-navigation-menu: 457;
+
+  --font-family-search-input: var(--font-family-primary-sans);
+  --font-size-search-input: 18px;
+  --line-height-search-input: normal;
+  --font-weight-search-input: 700;
 
   --font-size-section-label: 20px;
   --line-height-section-label: normal;
@@ -162,6 +171,8 @@
   :root {
     --font-size-display-hero: 52px;
     --line-height-display-hero: 68px;
+    --font-size-hero-title-on-light: 52px;
+    --line-height-hero-title-on-light: 68px;
     --font-size-heading-section: 42px;
     --line-height-heading-section: 62px;
     --font-size-body-large: 22px;
@@ -184,6 +195,8 @@
   :root {
     --font-size-display-hero: 36px;
     --line-height-display-hero: 48px;
+    --font-size-hero-title-on-light: 36px;
+    --line-height-hero-title-on-light: 48px;
     --font-size-heading-section: 32px;
     --line-height-heading-section: 46px;
     --font-size-body-large: 18px;

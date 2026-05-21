@@ -18,6 +18,8 @@
   --color-text-products-benefits-group-title: #00307A;
   --color-text-products-benefits-list: #2A2A2A;
   --color-marker-products-benefits-list: #1F1F1F;
+  --color-hero-title-on-light: #00307A;
+  --color-search-input-text: rgba(3, 15, 149, 0.33);
   --color-text-managing-director-desk-heading: var(--color-neutral-white);
   --color-text-managing-director-desk-body: rgba(255, 255, 255, 0.85);
   --color-text-footer-address: rgba(255, 255, 255, 0.95);

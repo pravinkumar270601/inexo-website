@@ -9,6 +9,25 @@ import mahalakhmiNewVideo from '@/assets/images/solutions/mahalakhmi_new.mp4'
 import mayuraSwivellingLeverVideo from '@/assets/images/solutions/mayura_swivelling_lever.mp4'
 import mayuraYokeVideo from '@/assets/images/solutions/mayura-yoke.mp4'
 import spotexImage from '@/assets/images/home/SPOTEX.svg'
+import adaptorPoster from '@/assets/images/solutions/ADAPTOR.png'
+import bracketPoster from '@/assets/images/solutions/BRACKET.png'
+import portBlockPoster from '@/assets/images/solutions/PORT BLOCK.png'
+import innerHubPoster from '@/assets/images/solutions/INNER HUB.png'
+import exhaustManifoldPoster from '@/assets/images/solutions/EXHAUST MANIFOLD.png'
+import swivellingLeverPoster from '@/assets/images/solutions/SWIVELLING LEVER.png'
+import yokePoster from '@/assets/images/solutions/YOKE.png'
+import spotexHdV680 from '@/assets/images/solutions/SPOTEX HD V 680.png'
+import spotexHdVc97 from '@/assets/images/solutions/SPOTEX HD VC 97.png'
+import fedpour60x150 from '@/assets/images/solutions/FEDPOUR 60×150 (RT).png'
+import spotexHdVc13425 from '@/assets/images/solutions/SPOTEX HD VC 13425.png'
+import spotexHdV8 from '@/assets/images/solutions/SPOTEX HD V 8.png'
+import fedpour40x125 from '@/assets/images/solutions/FEDPOUR 40×125 (RT).png'
+import fedexo55XpEpt80x100 from '@/assets/images/solutions/FEDEXO 55 XP EPT 80x100.png'
+import spotexHdV134 from '@/assets/images/solutions/SPOTEX HD V 134.png'
+import fedexoNd2 from '@/assets/images/solutions/FEDEXO 55 XP ND2.png'
+import fedexo50x75 from '@/assets/images/solutions/FEDEXO 55 XP 50x75(0).png'
+import fedexoEpt85x100 from '@/assets/images/solutions/FEDEXO 55 XP EPT 85×100.png'
+import fedexo80x150 from '@/assets/images/solutions/FEDEXO 55 XP 80×150(0).png'
 
 const solutionCategories = [
   {
@@ -20,7 +39,7 @@ const solutionCategories = [
         title: 'Yield Improvement of ADAPTOR Casting',
         summary:
           'SPOTEX HD replaces 3 conventional sleeves to reduce shrinkage defects and improve yield to 77%.',
-        // poster: CastingDetails_sideImage,
+        poster: adaptorPoster,
         videoSrc: adaptorVideo,
         castingDetails: [
           { label: 'Name', content: 'M/S Naetek Ferro Castings P Ltd' },
@@ -53,7 +72,7 @@ const solutionCategories = [
          sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [spotexHdV680],
         },
       },
       {
@@ -61,7 +80,7 @@ const solutionCategories = [
         title: 'Reduce fettling time for BRACKET Casting',
         summary:
           'Padding was eliminated by locating SPOTEX HD on the hot spot to save on fettling time and improve yield by adding a casting.',
-        poster: CastingDetails_sideImage,
+        poster: bracketPoster,
         videoSrc: bracketVideo,
         castingDetails: [
           { label: 'Name', content: 'Bracket' },
@@ -96,7 +115,7 @@ const solutionCategories = [
         sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [spotexHdVc97, fedpour60x150],
         },
       },
       {
@@ -104,7 +123,7 @@ const solutionCategories = [
         title: 'Eliminating Shrinkage in PORT BLOCK casting',
         summary:
           'SPOTEX HD is placed on the ‘Hot-spot’ to eliminate shrinkage defect and reduce fettling time.',
-        poster: CastingDetails_sideImage,
+        poster: portBlockPoster,
         videoSrc: belgaumPoVideo,
         castingDetails: [
           { label: 'Name', content: 'M/S. Belgaum Ferrocast (India) Pvt Ltd.' },
@@ -140,7 +159,7 @@ const solutionCategories = [
         sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [spotexHdVc13425],
         },
       },
       {
@@ -148,7 +167,7 @@ const solutionCategories = [
         title: 'Maximise yield and eliminate shrinkage on INNER HUB casting',
         summary:
           'SPOTEX HD and FEDPOUR together help to eliminate shrinkage defects and improve yield by adding one more casting.',
-        poster: CastingDetails_sideImage,
+        poster: innerHubPoster,
         videoSrc: mahalakhmiNewVideo,
         castingDetails: [
           { "label": "Name", "content": "M/S. Mahalaxmi Cast Alloy P Ltd" },
@@ -187,7 +206,7 @@ const solutionCategories = [
         sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [spotexHdV8, fedpour40x125],
         },
       },
       {
@@ -195,7 +214,7 @@ const solutionCategories = [
         title: 'Eliminate shrinkage and reduce fettling for EXHAUST MANIFOLD casting',
         summary:
           'Elliptical ND sleeves are placed on the flanges for effective feeding with the need for extra padding.',
-        poster: CastingDetails_sideImage,
+        poster: exhaustManifoldPoster,
         videoSrc: mahalakhmiNewVideo,
         castingDetails: [
           { label: 'Name', content: 'M/S. Mahalaxmi Cast Alloy P Ltd' },
@@ -231,7 +250,7 @@ const solutionCategories = [
         sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [fedexo55XpEpt80x100],
         },
       },
     ],
@@ -245,7 +264,7 @@ const solutionCategories = [
         title: 'Productivity improvement for SWIVELLING LEVER casting.',
         summary:
           'SPOTEX HD and various FEDEXO 55 XP sleeves help to maximise yield and reduce fettling times.',
-        poster: CastingDetails_sideImage,
+        poster: swivellingLeverPoster,
         videoSrc: mayuraSwivellingLeverVideo,
         castingDetails: [
           { label: 'Name', content: 'M/S. Mayura Steel P Ltd' },
@@ -285,7 +304,7 @@ const solutionCategories = [
         sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [spotexHdV134, fedexo55XpEpt80x100, fedexoNd2, fedexo50x75],
         },
       },
       {
@@ -293,7 +312,7 @@ const solutionCategories = [
         title: 'Eliminate shrinkage and reduce fettling for YOKE casting',
         summary:
           'Methoding was designed using the Inexo sleeves at various points for the elimination of shrinkage and reduction of fettling time. The reduction of fettling time is achieved using EPT 85x100 – elliptical sleeves.',
-        poster: CastingDetails_sideImage,
+        poster: yokePoster,
         videoSrc: mayuraYokeVideo,
         castingDetails: [
           { content: 'Name: M/S. Mayura Steel P Ltd' },
@@ -330,7 +349,7 @@ const solutionCategories = [
         sectionImages: {
           castingDetails: [CastingDetails_sideImage],
           // processDetails: [whoWeAreFacilityImage],
-          productsBenefits: [spotexImage],
+          productsBenefits: [fedexoEpt85x100, fedexo80x150],
         },
       },
     ],

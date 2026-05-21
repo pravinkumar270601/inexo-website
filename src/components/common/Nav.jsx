@@ -4,7 +4,7 @@ import logo from '@/assets/images/brand/inexo-logo.svg'
 import { Container } from '@/components/common/Container'
 
 const navItems = [
-  { label: 'Products'},
+  { label: 'Products', path: '/products' },
   { label: 'Solutions', path: '/solutions' },
   { label: 'News & Events' },
   { label: 'Contact us' },
