@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import heroArrowRight from '@/assets/images/home/heroarrow-right.svg'
-import productHeroImage from '@/assets/images/products/INEXO.png'
+import productHeroImage from '@/assets/images/Products/INEXO.png'
 import { Container } from '@/components/common/Container'
 
 const defaultSlides = [

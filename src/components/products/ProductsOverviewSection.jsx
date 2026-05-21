@@ -1,4 +1,4 @@
-import productsImage from '@/assets/images/products/INEXO  Products.png'
+import productsImage from '@/assets/images/Products/INEXO_Products.png'
 import searchIcon from '@/assets/images/brand/search_Icon.svg'
 import { Container } from '@/components/common/Container'
 import { SectionLabel } from '@/components/common/SectionLabel'
