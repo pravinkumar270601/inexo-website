@@ -1,65 +1,9 @@
 import { useEffect, useState } from 'react'
 import heroArrowRight from '@/assets/images/home/heroarrow-right.svg'
-import fedexoImage from '@/assets/images/home/FEDEXO.svg'
-import fedinImage from '@/assets/images/home/FEDIN.svg'
-import fedpourImage from '@/assets/images/home/FEDPOUR.svg'
-import spotexImage from '@/assets/images/home/SPOTEX.svg'
 import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { SectionLabel } from '@/components/common/SectionLabel'
-
-const featuredProducts = [
-  {
-    id: 'spotex',
-    title: 'SPOTEX',
-    image: spotexImage,
-    description:
-      'SPOTEX is a range of high performance highly exothermic sleeves which represents innovation, reliability and build for precision feeding.',
-  },
-  {
-    id: 'fedpour',
-    title: 'FEDPOUR',
-    image: fedpourImage,
-    description: 'FEDPOUR is a range of pouring solutions engineered for consistency and flow control.',
-  },
-  {
-    id: 'fedexo',
-    title: 'FEDEXO',
-    image: fedexoImage,
-    description:
-      'FEDEXO is a range of high performance exothermic cum insulating sleeves built for precision applications and reliability.',
-  },
-  {
-    id: 'fedin',
-    title: 'FEDIN',
-    image: fedinImage,
-    description: 'FEDIN are a range of insulating sleeves designed for consistency and durability.',
-  },
-  {
-    id: 'spotex-plus',
-    title: 'SPOTEX PLUS',
-    image: spotexImage,
-    description: 'Enhanced SPOTEX sleeve options designed for controlled feeding in demanding foundry conditions.',
-  },
-  {
-    id: 'fedpour-rt',
-    title: 'FEDPOUR RT',
-    image: fedpourImage,
-    description: 'FEDPOUR RT variants provide stable pouring behavior and repeatable process performance.',
-  },
-  {
-    id: 'fedexo-xp',
-    title: 'FEDEXO XP',
-    image: fedexoImage,
-    description: 'FEDEXO XP products are engineered to maintain thermal efficiency for sound castings.',
-  },
-  {
-    id: 'fedin-insul',
-    title: 'FEDIN INSUL',
-    image: fedinImage,
-    description: 'Insulating sleeve formats for robust process windows and consistent casting quality.',
-  },
-]
+import { featuredProducts } from '@/data/productCatalog'
 
 function getCardsPerPage(width) {
   if (width < 640) {

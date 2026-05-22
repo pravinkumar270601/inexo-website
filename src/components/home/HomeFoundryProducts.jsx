@@ -1,39 +1,7 @@
 import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { SectionLabel } from '@/components/common/SectionLabel'
-import fedexoImage from '@/assets/images/home/FEDEXO.svg'
-import fedinImage from '@/assets/images/home/FEDIN.svg'
-import fedpourImage from '@/assets/images/home/FEDPOUR.svg'
-import spotexImage from '@/assets/images/home/SPOTEX.svg'
-
-const foundryProducts = [
-  {
-    id: 'spotex',
-    title: 'SPOTEX',
-    image: spotexImage,
-    description:
-      'SPOTEX is a range of high performance highly exothermic sleeves which represents innovation, reliability and build for precision feeding.',
-  },
-  {
-    id: 'fedpour',
-    title: 'FEDPOUR',
-    image: fedpourImage,
-    description: 'FEDPOUR is a range of pouring solutions engineered for consistency and flow control.',
-  },
-  {
-    id: 'fedexo',
-    title: 'FEDEXO',
-    image: fedexoImage,
-    description:
-      'FEDEXO is a range of high performance exothermic cum insulating sleeves built for precision applications and reliability.',
-  },
-  {
-    id: 'fedin',
-    title: 'FEDIN',
-    image: fedinImage,
-    description: 'FEDIN are a range of insulating sleeves designed for consistency and durability.',
-  },
-]
+import { homeProducts } from '@/data/productCatalog'
 
 export function HomeFoundryProducts() {
   return (
@@ -54,7 +22,7 @@ export function HomeFoundryProducts() {
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-          {foundryProducts.map((product) => (
+          {homeProducts.map((product) => (
             <FoundryProductCard key={product.id} product={product} />
           ))}
         </div>

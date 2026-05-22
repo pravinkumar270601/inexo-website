@@ -4,6 +4,7 @@ import { SiteLayout } from '@/components/common/SiteLayout'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
 const ProductsPage = lazy(() => import('@/pages/ProductsPage'))
+const ProductDetailPage = lazy(() => import('@/pages/ProductDetailPage'))
 const SolutionsPage = lazy(() => import('@/pages/SolutionsPage'))
 
 function RouteFallback() {
@@ -24,6 +25,7 @@ export function AppRouter() {
         <Route element={<SiteLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:productId" element={<ProductDetailPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
         </Route>
       </Routes>
