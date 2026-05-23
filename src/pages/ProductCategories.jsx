@@ -3,51 +3,50 @@ import searchIcon from '@/assets/images/brand/search_Icon.svg'
 import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { ProductsHero } from '@/components/products/ProductsHero'
-import { PillTag } from '@/components/common/PillTag'
 import {
+  categories,
   getCategoryBySlug,
-  getProductsByCategoryAndSubCategorySlugs,
   getProductsByCategorySlug,
-  getSubCategoryBySlug,
   getSubCategoriesByCategorySlug,
+  toCategoryCard,
   toProductCard,
   toSubCategoryCard,
 } from '@/data/productCatalog'
 
-export default function ProductsPage() {
-  const { categorySlug, subCategorySlug } = useParams()
+export default function ProductCategories() {
+  const { categorySlug } = useParams()
   const category = getCategoryBySlug(categorySlug)
-  const subCategory = getSubCategoryBySlug(subCategorySlug)
 
-  if (!category || !subCategory || subCategory.categoryId !== category.id) {
+  if (!category) {
     return <Navigate replace to="/products" />
   }
 
-  const subCategoryProducts = getProductsByCategoryAndSubCategorySlugs(category.slug, subCategory.slug)
+  const categorySubCategories = getSubCategoriesByCategorySlug(category.slug).map((subCategory) => (
+    toSubCategoryCard(subCategory)
+  ))
+  const directCategoryProducts = getProductsByCategorySlug(category.slug)
+    .filter((product) => product.subCategoryId === null)
     .map((product) => toProductCard(product))
-  const relatedCards = [
-    ...getSubCategoriesByCategorySlug(category.slug)
-      .filter((item) => item.id !== subCategory.id)
-      .map((item) => toSubCategoryCard(item)),
-    ...getProductsByCategorySlug(category.slug)
-      .filter((product) => product.subCategoryId === null)
-      .map((product) => toProductCard(product)),
-  ].slice(0, 4)
+  const categoryCards = [...categorySubCategories, ...directCategoryProducts]
+  const relatedCategories = categories
+    .filter((item) => item.id !== category.id)
+    .slice(0, 4)
+    .map((item) => toCategoryCard(item, { ctaLabel: 'View Products' }))
   const heroSlides = [
     {
-      id: `${subCategory.slug}-hero-main`,
-      title: `${subCategory.name} - Strength in Every Structure.`,
-      imageSrc: subCategory.image,
+      id: `${category.slug}-hero-main`,
+      title: `${category.name} - Strength in Every Structure.`,
+      imageSrc: category.image,
     },
     {
-      id: `${subCategory.slug}-hero-detail`,
-      title: subCategory.description,
-      imageSrc: subCategory.image,
+      id: `${category.slug}-hero-detail`,
+      title: category.description,
+      imageSrc: category.image,
     },
     {
-      id: `${subCategory.slug}-hero-overview`,
-      title: `Explore ${subCategory.name} products.`,
-      imageSrc: subCategory.image,
+      id: `${category.slug}-hero-overview`,
+      title: `Explore ${category.name} categories and products.`,
+      imageSrc: category.image,
     },
   ]
 
@@ -71,16 +70,16 @@ export default function ProductsPage() {
 
           <div className="w-full max-w-[991px]">
             <div>
-              <h2 className="type-2 mt-10">{subCategory.name}</h2>
+              <h2 className="type-2 mt-10">{category.name}</h2>
               <p className="mt-8 text-[18px] leading-[1.65] text-[#2A2A2A] sm:text-[20px]">
-                {subCategory.description}
+                {category.description}
               </p>
             </div>
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-            {subCategoryProducts.map((product) => (
-              <FoundryProductCard key={product.id} product={product} />
+            {categoryCards.map((card) => (
+              <FoundryProductCard key={card.id} product={card} />
             ))}
           </div>
         </Container>
@@ -89,13 +88,12 @@ export default function ProductsPage() {
       <section className="bg-[#f4f4f4] py-16 sm:py-20 lg:py-[120px]">
         <Container>
           <div className="text-center">
-            <PillTag>Request Data Sheet</PillTag>
-            <h2 className="type-2 mt-8">Other Products</h2>
+            <h2 className="type-2 mt-8">Other Categories</h2>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-            {relatedCards.map((relatedProduct) => (
-              <FoundryProductCard key={relatedProduct.id} product={relatedProduct} />
+            {relatedCategories.map((relatedCategory) => (
+              <FoundryProductCard key={relatedCategory.id} product={relatedCategory} />
             ))}
           </div>
         </Container>

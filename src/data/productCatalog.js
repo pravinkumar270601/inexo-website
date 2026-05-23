@@ -3,164 +3,393 @@ import fedinImage from '@/assets/images/home/FEDIN.svg'
 import fedpourImage from '@/assets/images/home/FEDPOUR.svg'
 import spotexImage from '@/assets/images/home/SPOTEX.svg'
 
-export const productCatalog = [
+export const categories = [
   {
-    id: 'spotex',
-    title: 'SPOTEX',
+    id: 1,
+    name: 'SPOTEX',
+    slug: 'spotex',
     image: spotexImage,
-    href: '/products/spotex',
-    description:
-      'SPOTEX is a range of high performance highly exothermic sleeves which represents innovation, reliability and build for precision feeding.',
-    heroTitle: 'SPOTEX - Strength in Every Structure.',
-    detailTitle: 'Highly exothermic sleeves built for dependable feeding performance.',
-    overview:
-      ' th  hermal behavior and repeatable results.',
-    highlights: [
-      'High exothermic performance for demanding feed zones.',
-      'Supports lower fettling effort and cleaner castings.',
-      'Designed for stable foundry output across repeat production.',
-    ],
+    description: 'High performance feeding sleeves.',
   },
   {
-    id: 'fedpour',
-    title: 'FEDPOUR',
+    id: 2,
+    name: 'FEDPOUR',
+    slug: 'fedpour',
     image: fedpourImage,
-    href: '/products/fedpour',
-    description: 'FEDPOUR is a range of pouring solutions engineered for consistency and flow control.',
-    heroTitle: 'FEDPOUR - Controlled flow for reliable pouring.',
-    detailTitle: 'Pouring solutions designed for predictable metal flow.',
-    overview:
-      'FEDPOUR products help regulate pouring behavior so foundries can maintain cleaner fills, better operator control, and more repeatable mold performance. The range is suited to applications where flow discipline has a direct impact on casting quality.',
-    highlights: [
-      'Improves pouring consistency across production cycles.',
-      'Supports smoother mold filling and reduced turbulence.',
-      'Built for repeatable foundry process control.',
-    ],
+    description: 'Pouring solutions for consistency and control.',
   },
   {
-    id: 'fedexo',
-    title: 'FEDEXO',
+    id: 3,
+    name: 'FEDEXO',
+    slug: 'fedexo',
     image: fedexoImage,
-    href: '/products/fedexo',
-    description:
-      'FEDEXO is a range of high performance exothermic cum insulating sleeves built for precision applications and reliability.',
-    heroTitle: 'FEDEXO - Thermal efficiency for sound castings.',
-    detailTitle: 'Exothermic and insulating sleeves for efficient feeding.',
-    overview:
-      'FEDEXO combines exothermic and insulating performance to keep feed metal active for longer, helping foundries improve yield while protecting casting integrity. It is suited to applications that demand strong thermal support without sacrificing repeatability.',
-    highlights: [
-      'Thermal efficiency that helps extend feeding action.',
-      'Supports improved yield and reduced casting defects.',
-      'Engineered for precision-focused foundry applications.',
-    ],
+    description: 'High performance exothermic insulating sleeves.',
   },
   {
-    id: 'fedin',
-    title: 'FEDIN',
+    id: 4,
+    name: 'FEDIN',
+    slug: 'fedin',
     image: fedinImage,
-    href: '/products/fedin',
-    description: 'FEDIN are a range of insulating sleeves designed for consistency and durability.',
-    heroTitle: 'FEDIN - Insulating sleeves for process stability.',
-    detailTitle: 'Insulating sleeves designed to support durable process windows.',
-    overview:
-      'FEDIN sleeves are designed to preserve heat efficiently and provide stable operating conditions in foundry feeding systems. The range supports dependable casting outcomes where process robustness and consistency are priorities.',
-    highlights: [
-      'Reliable insulation for stable foundry conditions.',
-      'Supports consistent casting quality in repeat runs.',
-      'Built for durability in everyday production use.',
-    ],
-  },
-  {
-    id: 'spotex-plus',
-    title: 'SPOTEX PLUS',
-    image: spotexImage,
-    href: '/products/spotex-plus',
-    description: 'Enhanced SPOTEX sleeve options designed for controlled feeding in demanding foundry conditions.',
-    heroTitle: 'SPOTEX PLUS - Added control for advanced feeding needs.',
-    detailTitle: 'Enhanced sleeve options for higher-demand feeding scenarios.',
-    overview:
-      'SPOTEX PLUS extends the SPOTEX product family with options aimed at more demanding feeding conditions where additional control and thermal confidence are required. It helps maintain product quality while supporting efficient foundry throughput.',
-    highlights: [
-      'Enhanced control for demanding foundry applications.',
-      'Helps maintain feeding reliability in tougher conditions.',
-      'Extends the SPOTEX family for broader process coverage.',
-    ],
-  },
-  {
-    id: 'spotex-plus2',
-    title: 'SPOTEX PLUS',
-    image: spotexImage,
-    href: '/products/spotex-plus',
-    description: 'Enhanced SPOTEX sleeve options designed for controlled feeding in demanding foundry conditions.',
-    heroTitle: 'SPOTEX PLUS - Added control for advanced feeding needs.',
-    detailTitle: 'Enhanced sleeve options for higher-demand feeding scenarios.',
-    overview:
-      'SPOTEX PLUS extends the SPOTEX product family with options aimed at more demanding feeding conditions where additional control and thermal confidence are required. It helps maintain product quality while supporting efficient foundry throughput.',
-    highlights: [
-      'Enhanced control for demanding foundry applications.',
-      'Helps maintain feeding reliability in tougher conditions.',
-      'Extends the SPOTEX family for broader process coverage.',
-    ],
-  },
-  {
-    id: 'fedpour-rt',
-    title: 'FEDPOUR RT',
-    image: fedpourImage,
-    href: '/products/fedpour-rt',
-    description: 'FEDPOUR RT variants provide stable pouring behavior and repeatable process performance.',
-    heroTitle: 'FEDPOUR RT - Repeatable pouring with stable performance.',
-    detailTitle: 'Pouring variants built for repeatability and control.',
-    overview:
-      'FEDPOUR RT variants are developed for foundries that need highly repeatable pouring behavior and controlled mold filling from run to run. The range helps strengthen process consistency without adding unnecessary complexity.',
-    highlights: [
-      'Repeatable pouring behavior across production runs.',
-      'Supports cleaner fills with stronger process control.',
-      'Designed for stable day-to-day foundry performance.',
-    ],
-  },
-  {
-    id: 'fedexo-xp',
-    title: 'FEDEXO XP',
-    image: fedexoImage,
-    href: '/products/fedexo-xp',
-    description: 'FEDEXO XP products are engineered to maintain thermal efficiency for sound castings.',
-    heroTitle: 'FEDEXO XP - Extended thermal support for critical feed zones.',
-    detailTitle: 'XP-grade sleeves for higher thermal performance demands.',
-    overview:
-      'FEDEXO XP products are tailored for casting programs that require stronger thermal performance and reliable feeding over demanding geometries. They help improve casting soundness while supporting efficient foundry operation.',
-    highlights: [
-      'Higher thermal support for critical feeding needs.',
-      'Helps improve casting soundness in demanding layouts.',
-      'Designed for efficient foundry output with reliable performance.',
-    ],
-  },
-  {
-    id: 'fedin-insul',
-    title: 'FEDIN INSUL',
-    image: fedinImage,
-    href: '/products/fedin-insul',
-    description: 'Insulating sleeve formats for robust process windows and consistent casting quality.',
-    heroTitle: 'FEDIN INSUL - Robust insulation for consistent output.',
-    detailTitle: 'Insulating formats designed for robust process windows.',
-    overview:
-      'FEDIN INSUL focuses on dependable insulating performance for foundries that need stable process windows and consistent casting quality. It is suited to operations where steady heat retention and repeatability matter most.',
-    highlights: [
-      'Stable insulation for robust production windows.',
-      'Supports consistent quality in everyday foundry use.',
-      'Built to balance process reliability and durability.',
-    ],
+    description: 'Insulating sleeves for consistency and durability.',
   },
 ]
 
-export const homeProducts = productCatalog.filter((product) => (
-  product.id === 'spotex'
-  || product.id === 'fedpour'
-  || product.id === 'fedexo'
-  || product.id === 'fedin'
-))
+export const subCategories = [
+  {
+    id: 101,
+    categoryId: 3,
+    name: 'FEDEXO 55 (XP)',
+    slug: 'fedexo-55-xp',
+    image: fedexoImage,
+    description: 'Insulating sleeves available in different shapes.',
+  },
+  {
+    id: 102,
+    categoryId: 3,
+    name: 'FEDEXO 50',
+    slug: 'fedexo-50',
+    image: fedexoImage,
+    description: 'Exothermic and insulating sleeves.',
+  },
+  {
+    id: 103,
+    categoryId: 3,
+    name: 'FEDEXO LID',
+    slug: 'fedexo-lid',
+    image: fedexoImage,
+    description: 'Innovative precision feeding solution.',
+  },
+]
 
-export const featuredProducts = productCatalog
+export const products = [
+  {
+    id: 1001,
+    categoryId: 3,
+    subCategoryId: 101,
+    name: 'EXOTHERMIC OPEN SLEEVES CYLINDRICAL',
+    slug: 'exothermic-open-sleeves-cylindrical',
+    shortDescription: 'Cylindrical open sleeves for open risers.',
+    description: 'Highly Exothermic Open Sleeves Cylindrical Type are for use as open risers.',
+    thumbnail: fedexoImage,
+    gallery: [fedexoImage],
+    features: [
+      {
+        title: 'Cylindrical Shape',
+        description: 'Designed for open riser systems; easy to position.',
+      },
+      {
+        title: 'Highly Exothermic',
+        description: 'Generates intense heat upon metal contact, delaying solidification in the feeder.',
+      },
+      {
+        title: 'Increased Feeding Efficiency',
+        description: 'Improves feeding in the feeder head.',
+      },
+    ],
+    benefits: [
+      'Increases the solidification time by 2 to 2.6 times depending on the size.',
+      'Enhances yield.',
+      'Consistency in casting quality.',
+      'Cuts down on fettling time.',
+    ],
+    specifications: {
+      sizes: ['30mm', '50mm', '75mm', '100mm', '225mm'],
+      material: 'Exothermic sleeve material',
+      application: 'Open riser systems',
+    },
+    relatedProducts: [1002, 1003],
+  },
+  {
+    id: 1002,
+    categoryId: 3,
+    subCategoryId: 101,
+    name: 'EXOTHERMIC BLIND SLEEVES CYLINDRICAL',
+    slug: 'exothermic-blind-sleeves-cylindrical',
+    shortDescription: 'Blind cylindrical sleeves.',
+    description: 'Highly exothermic cylindrical blind sleeves.',
+    thumbnail: fedexoImage,
+    gallery: [fedexoImage],
+    features: [],
+    benefits: [],
+    specifications: {},
+    relatedProducts: [1001],
+  },
+  {
+    id: 1003,
+    categoryId: 3,
+    subCategoryId: 101,
+    name: 'EXOTHERMIC NECK DOWN SLEEVES',
+    slug: 'exothermic-neck-down-sleeves',
+    shortDescription: 'Neck down sleeves.',
+    description: 'Highly exothermic neck down sleeves.',
+    thumbnail: fedexoImage,
+    gallery: [fedexoImage],
+    features: [],
+    benefits: [],
+    specifications: {},
+    relatedProducts: [1001],
+  },
+  {
+    id: 1004,
+    categoryId: 3,
+    subCategoryId: 102,
+    name: 'FEDEXO 50',
+    slug: 'fedexo-50',
+    shortDescription: 'Exothermic and insulating sleeves with stable performance.',
+    description: 'FEDEXO 50 products provide high thermal support and stable feeding behavior.',
+    thumbnail: fedexoImage,
+    gallery: [fedexoImage],
+    features: [],
+    benefits: ['Enhances yield.', 'Improves consistency.'],
+    specifications: {},
+    relatedProducts: [1001],
+  },
+  {
+    id: 1005,
+    categoryId: 3,
+    subCategoryId: 103,
+    name: 'FEDEXO LID',
+    slug: 'fedexo-lid',
+    shortDescription: 'Innovative precision feeding solution.',
+    description: 'FEDEXO LID improves thermal control for difficult feed zones.',
+    thumbnail: fedexoImage,
+    gallery: [fedexoImage],
+    features: [],
+    benefits: ['Improves feed control.', 'Supports better casting quality.'],
+    specifications: {},
+    relatedProducts: [1001],
+  },
+  {
+    id: 2001,
+    categoryId: 3,
+    subCategoryId: null,
+    name: 'BREAKER CORE',
+    slug: 'breaker-core',
+    shortDescription: 'Breaker core product.',
+    description: 'Breaker core used for casting applications.',
+    thumbnail: fedexoImage,
+    gallery: [fedexoImage],
+    features: [],
+    benefits: [],
+    specifications: {},
+    relatedProducts: [],
+  },
+  {
+    id: 3001,
+    categoryId: 1,
+    subCategoryId: null,
+    name: 'SPOTEX HD V 680',
+    slug: 'spotex-hd-v680',
+    shortDescription: 'High-performance highly exothermic sleeve.',
+    description: 'SPOTEX HD V 680 is engineered for precision feeding and yield improvement.',
+    thumbnail: spotexImage,
+    gallery: [spotexImage],
+    features: [],
+    benefits: ['Improves yield.', 'Reduces shrinkage defects.'],
+    specifications: {},
+    relatedProducts: [],
+  },
+  {
+    id: 4001,
+    categoryId: 2,
+    subCategoryId: null,
+    name: 'FEDPOUR RT',
+    slug: 'fedpour-rt',
+    shortDescription: 'Pouring solution for repeatable process performance.',
+    description: 'FEDPOUR RT products are designed for stable and controlled pouring behavior.',
+    thumbnail: fedpourImage,
+    gallery: [fedpourImage],
+    features: [],
+    benefits: ['Supports smooth mold filling.', 'Improves repeatability.'],
+    specifications: {},
+    relatedProducts: [],
+  },
+  {
+    id: 5001,
+    categoryId: 4,
+    subCategoryId: null,
+    name: 'FEDIN INSUL',
+    slug: 'fedin-insul',
+    shortDescription: 'Insulating sleeve range for durable process windows.',
+    description: 'FEDIN INSUL helps maintain stable casting conditions across repeated runs.',
+    thumbnail: fedinImage,
+    gallery: [fedinImage],
+    features: [],
+    benefits: ['Stable insulation.', 'Consistent quality output.'],
+    specifications: {},
+    relatedProducts: [],
+  },
+  {
+    id: 6001,
+    categoryId: null,
+    subCategoryId: null,
+    name: 'STANDALONE PRODUCT',
+    slug: 'standalone-product',
+    shortDescription: 'Product without category.',
+    description: 'Direct standalone product page.',
+    thumbnail: spotexImage,
+    gallery: [spotexImage],
+    features: [],
+    benefits: [],
+    specifications: {},
+    relatedProducts: [],
+  },
+]
+
+export const productTree = {
+  categories,
+  subCategories,
+  products,
+}
+
+const categoryBySlug = new Map(categories.map((category) => [category.slug, category]))
+const categoryById = new Map(categories.map((category) => [category.id, category]))
+const subCategoryBySlug = new Map(subCategories.map((subCategory) => [subCategory.slug, subCategory]))
+const subCategoryById = new Map(subCategories.map((subCategory) => [subCategory.id, subCategory]))
+const productBySlug = new Map(products.map((product) => [product.slug, product]))
+
+export function getCategoryBySlug(categorySlug) {
+  return categoryBySlug.get(categorySlug)
+}
+
+export function getCategoryById(categoryId) {
+  return categoryById.get(categoryId)
+}
+
+export function getSubCategoryBySlug(subCategorySlug) {
+  return subCategoryBySlug.get(subCategorySlug)
+}
+
+export function getSubCategoryById(subCategoryId) {
+  return subCategoryById.get(subCategoryId)
+}
+
+export function getSubCategoriesByCategorySlug(categorySlug) {
+  const category = getCategoryBySlug(categorySlug)
+
+  if (!category) {
+    return []
+  }
+
+  return subCategories.filter((subCategory) => subCategory.categoryId === category.id)
+}
+
+export function getProductBySlug(productSlug) {
+  return productBySlug.get(productSlug)
+}
+
+export function getProductsByCategorySlug(categorySlug) {
+  const category = getCategoryBySlug(categorySlug)
+
+  if (!category) {
+    return []
+  }
+
+  return products.filter((product) => product.categoryId === category.id)
+}
+
+export function getProductsByCategoryAndSubCategorySlugs(categorySlug, subCategorySlug) {
+  const category = getCategoryBySlug(categorySlug)
+  const subCategory = getSubCategoryBySlug(subCategorySlug)
+
+  if (!category || !subCategory || subCategory.categoryId !== category.id) {
+    return []
+  }
+
+  return products.filter((product) => (
+    product.categoryId === category.id && product.subCategoryId === subCategory.id
+  ))
+}
+
+export function toCategoryCard(category, overrides = {}) {
+  return {
+    id: category.slug,
+    title: category.name,
+    image: category.image,
+    description: category.description,
+    href: `/products/${category.slug}`,
+    ctaLabel: 'View Products',
+    ...overrides,
+  }
+}
+
+export function toSubCategoryCard(subCategory, overrides = {}) {
+  const category = getCategoryById(subCategory.categoryId)
+  const fallbackHref = '/products'
+
+  return {
+    id: subCategory.slug,
+    title: subCategory.name,
+    image: subCategory.image,
+    description: subCategory.description,
+    href: category ? `/products/${category.slug}/${subCategory.slug}` : fallbackHref,
+    ctaLabel: 'View Products',
+    ...overrides,
+  }
+}
+
+export function toProductCard(product, overrides = {}) {
+  return {
+    id: product.slug,
+    title: product.name,
+    image: product.thumbnail,
+    description: product.shortDescription,
+    href: `/product/${product.slug}`,
+    ctaLabel: 'View Details',
+    ...overrides,
+  }
+}
+
+function toLegacyCatalogProduct(product) {
+  return {
+    id: product.slug,
+    title: product.name,
+    image: product.thumbnail,
+    href: `/product/${product.slug}`,
+    description: product.shortDescription,
+    heroTitle: `${product.name} - Strength in Every Structure.`,
+    detailTitle: product.name,
+    overview: product.description,
+    highlights: product.features.map((feature) => feature.description),
+    benefits: product.benefits,
+    keyFeatureItems: product.features.map((feature) => ({
+      title: feature.title,
+      points: [feature.description],
+    })),
+    typicalBenefitItems: product.benefits.map((benefit) => ({
+      points: [benefit],
+    })),
+    gallery: product.gallery,
+  }
+}
+
+export const productCatalog = products.map((product) => toLegacyCatalogProduct(product))
+
+export const homeProducts = categories.map((category) => toCategoryCard(category))
+
+export const featuredProducts = [
+  ...categories.map((category) => toCategoryCard(category)),
+  ...products
+    .filter((product) => product.categoryId === null)
+    .map((product) => toProductCard(product, { ctaLabel: 'View Details' })),
+]
 
 export function getProductById(productId) {
-  return productCatalog.find((product) => product.id === productId)
+  const bySlug = getProductBySlug(productId)
+
+  if (bySlug) {
+    return toLegacyCatalogProduct(bySlug)
+  }
+
+  const asNumber = Number(productId)
+
+  if (!Number.isNaN(asNumber)) {
+    const byNumericId = products.find((product) => product.id === asNumber)
+
+    if (byNumericId) {
+      return toLegacyCatalogProduct(byNumericId)
+    }
+  }
+
+  return undefined
 }

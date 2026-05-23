@@ -1,6 +1,8 @@
 :root {
   --color-brand-accent-yellow: #ffb400;
   --color-brand-primary-blue: #00307a;
+  --color-pill-background: #00307A;
+  --color-pill-text: #FFFFFF;
   --color-surface-foundry-product-card-panel: rgba(0, 48, 122, 0.6);
   --color-text-foundry-product-card-title: var(--color-neutral-white);
   --color-text-foundry-product-card-description: var(--color-neutral-white);

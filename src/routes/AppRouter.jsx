@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import { SiteLayout } from '@/components/common/SiteLayout'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
+const AllProductsPage = lazy(() => import('@/pages/AllProductsPage'))
+const ProductCategories = lazy(() => import('@/pages/ProductCategories'))
 const ProductsPage = lazy(() => import('@/pages/ProductsPage'))
 const ProductDetailPage = lazy(() => import('@/pages/ProductDetailPage'))
 const SolutionsPage = lazy(() => import('@/pages/SolutionsPage'))
@@ -24,8 +26,10 @@ export function AppRouter() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:productId" element={<ProductDetailPage />} />
+          <Route path="/products" element={<AllProductsPage />} />
+          <Route path="/products/:categorySlug" element={<ProductCategories />} />
+          <Route path="/products/:categorySlug/:subCategorySlug" element={<ProductsPage />} />
+          <Route path="/product/:productSlug" element={<ProductDetailPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
         </Route>
       </Routes>

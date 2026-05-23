@@ -2,6 +2,12 @@
   --font-family-primary-sans: 'IBM Plex Sans', sans-serif;
   --font-family-display-serif: 'IBM Plex Serif', serif;
 
+  /* Pill / Tag typography */
+  --font-family-pill: var(--font-family-display-serif);
+  --font-size-pill: 24px;
+  --line-height-pill: normal;
+  --font-weight-pill: 700;
+
   --font-size-display-hero: 64px;
   --line-height-display-hero: 84px;
   --font-weight-display-hero: 500;

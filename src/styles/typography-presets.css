@@ -359,3 +359,22 @@
   font-weight: var(--font-weight-footer-submit-button);
   line-height: var(--line-height-footer-submit-button);
 }
+
+/* Pill / Tag preset used for prominent section labels */
+.pill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: var(--color-pill-background);
+  height: 76px;
+  color: var(--color-pill-text);
+  text-align: center;
+  font-family: var(--font-family-pill);
+  font-size: var(--font-size-pill);
+  font-style: normal;
+  font-weight: var(--font-weight-pill);
+  line-height: var(--line-height-pill);
+  padding: 0 32px;
+  white-space: nowrap;
+}
