@@ -8,7 +8,7 @@ export function AppProviders({ children }) {
   return (
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>{children}</BrowserRouter>
+        <BrowserRouter basename="/">{children}</BrowserRouter>
       </QueryClientProvider>
     </Provider>
   )
