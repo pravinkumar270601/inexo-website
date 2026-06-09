@@ -4,14 +4,8 @@ import searchIcon from '@/assets/images/brand/search_Icon.svg'
 import { Container } from '@/components/common/Container'
 import { ProductsHero } from '@/components/products/ProductsHero'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
-import {
-  getProductBySlug,
-  getProductsByCategorySlug,
-  getCategoryById,
-  getSubCategoryById,
-  products,
-  toProductCard,
-} from '@/data/productCatalog'
+import { toProductCard } from '@/data/productCatalog'
+import { useProductCatalogQuery } from '@/hooks/useProductCatalogQuery'
 
 function ImageCarousel({ images = [], alt = 'Gallery' }) {
   const imgs = images && images.length > 0 ? images : []
@@ -46,52 +40,65 @@ function ImageCarousel({ images = [], alt = 'Gallery' }) {
 
 export default function ProductDetailPage() {
   const { productSlug } = useParams()
-  const product = getProductBySlug(productSlug)
+  const { data: catalog, isLoading } = useProductCatalogQuery()
+  const product = catalog?.getProductBySlug(productSlug)
+
+  if (isLoading) {
+    return null
+  }
 
   if (!product) return <Navigate replace to="/products" />
 
-  const category = product.categoryId ? getCategoryById(product.categoryId) : null
-  const subCategory = product.subCategoryId ? getSubCategoryById(product.subCategoryId) : null
+  const category = product.categoryId ? catalog.getCategoryById(product.categoryId) : null
+  const subCategory = product.subCategoryId ? catalog.getSubCategoryById(product.subCategoryId) : null
 
   const heroSlides = [
-    { id: `${product.slug}-hero-main`, title: `${product.name} - Strength in Every Structure.`, imageSrc: product.thumbnail },
-    { id: `${product.slug}-hero-detail`, title: product.description, imageSrc: product.thumbnail },
+    {
+      id: `${product.slug}-hero`,
+      title: product.carouselDescription || product.description || `${product.name} - Strength in Every Structure.`,
+      imageSrc: product.carouselImage || product.image,
+    },
   ]
 
-  const gallery = product.gallery?.length ? product.gallery : [product.thumbnail]
+  const gallery = product.gallery?.length ? product.gallery : [product.image]
 
-  const relatedProducts = (product.relatedProducts?.length
-    ? product.relatedProducts
-        .map((relatedId) => products.find((item) => item.id === relatedId))
-        .filter(Boolean)
-    : category
-      ? getProductsByCategorySlug(category.slug)
-          .filter((item) => item.id !== product.id)
-          .slice(0, 4)
-      : products.filter((item) => item.id !== product.id).slice(0, 4)
+  const explicitRelated = (product.relatedProducts || [])
+    .map((id) => catalog.products.find((p) => p.id === id || p.slug === id))
+    .filter(Boolean)
+
+  const relatedProducts = (
+    explicitRelated.length > 0
+      ? explicitRelated
+      : subCategory
+        ? catalog.getProductsByCategoryAndSubCategorySlugs(category.slug, subCategory.slug)
+            .filter((item) => item.id !== product.id)
+        : category
+          ? catalog.getProductsByCategorySlug(category.slug)
+              .filter((item) => item.id !== product.id)
+          : catalog.products.filter((item) => item.id !== product.id)
   ).map((item) => toProductCard(item))
 
   const keyFeatureItems = product.features?.length
     ? product.features.map((feature) => ({
         title: feature.title,
-        points: [feature.description],
+        points: feature.points || [],
       }))
     : [
         {
-          title: 'Application',
-          points: [product.specifications?.application ?? 'General foundry feeding applications.'],
+          title: 'Feature',
+          points: ['Reliable foundry performance for demanding casting applications.'],
         },
         {
-          title: 'Material',
-          points: [product.specifications?.material ?? 'Engineered foundry sleeve material.'],
+          title: 'Process Fit',
+          points: ['Configured for repeatable production workflows and casting quality.'],
         },
-        ...(product.specifications?.sizes?.length
-          ? [{ points: [`Available ${product.specifications.sizes.join(', ')}`] }]
-          : []),
       ]
 
   const typicalBenefitItems = product.benefits?.length
-    ? product.benefits.map((benefit) => ({ points: [benefit] }))
+    ? product.benefits.map((benefit) => ({
+        title: benefit.title,
+        points: benefit.points || [],
+      }))
     : [
         { points: ['Supports reliable foundry process performance.'] },
         { points: ['Helps maintain consistent casting quality.'] },
@@ -185,7 +192,13 @@ export default function ProductDetailPage() {
       <section className=" py-16 sm:py-20 lg:py-[120px]">
         <Container>
           <div className="text-center">
-            <h2 className="type-4">Related Products</h2>
+            <h2 className="type-4">
+              {subCategory
+                ? `Related Products of ${subCategory.name}`
+                : category
+                  ? `Related Products of ${category.name}`
+                  : 'Related Products'}
+            </h2>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">

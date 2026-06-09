@@ -32,6 +32,9 @@
   --color-neutral-white: #fff;
   --color-neutral-black: #000;
   --color-text-primary: #000;
+  --color-text-careers-body: #030F95;
+  --color-text-careers-card-title: #030F95;
+  --color-text-faq-question: #030F95;
 }
 
 .text-brand-accent-yellow,
@@ -58,6 +61,18 @@
   color: var(--color-neutral-black);
 }
 
+.text-careers-body {
+  color: var(--color-text-careers-body);
+}
+
+.text-careers-card-title {
+  color: var(--color-text-careers-card-title);
+}
+
+.text-faq-question {
+  color: var(--color-text-faq-question);
+}
+
 .bg-brand-accent-yellow,
 .bg-brand-yellow {
   background-color: var(--color-brand-accent-yellow);
@@ -77,3 +92,4 @@
 .bg-brand-white {
   background-color: var(--color-neutral-white);
 }
+

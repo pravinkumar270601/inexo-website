@@ -4,50 +4,38 @@ import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { ProductsHero } from '@/components/products/ProductsHero'
 import { PillTag } from '@/components/common/PillTag'
-import {
-  getCategoryBySlug,
-  getProductsByCategoryAndSubCategorySlugs,
-  getProductsByCategorySlug,
-  getSubCategoryBySlug,
-  getSubCategoriesByCategorySlug,
-  toProductCard,
-  toSubCategoryCard,
-} from '@/data/productCatalog'
+import { toProductCard, toSubCategoryCard } from '@/data/productCatalog'
+import { useProductCatalogQuery } from '@/hooks/useProductCatalogQuery'
 
 export default function ProductsPage() {
   const { categorySlug, subCategorySlug } = useParams()
-  const category = getCategoryBySlug(categorySlug)
-  const subCategory = getSubCategoryBySlug(subCategorySlug)
+  const { data: catalog, isLoading } = useProductCatalogQuery()
+  const category = catalog?.getCategoryBySlug(categorySlug)
+  const subCategory = catalog?.getSubCategoryBySlug(subCategorySlug)
+
+  if (isLoading) {
+    return null
+  }
 
   if (!category || !subCategory || subCategory.categoryId !== category.id) {
     return <Navigate replace to="/products" />
   }
 
-  const subCategoryProducts = getProductsByCategoryAndSubCategorySlugs(category.slug, subCategory.slug)
+  const subCategoryProducts = catalog.getProductsByCategoryAndSubCategorySlugs(category.slug, subCategory.slug)
     .map((product) => toProductCard(product))
   const relatedCards = [
-    ...getSubCategoriesByCategorySlug(category.slug)
+    ...catalog.getSubCategoriesByCategorySlug(category.slug)
       .filter((item) => item.id !== subCategory.id)
-      .map((item) => toSubCategoryCard(item)),
-    ...getProductsByCategorySlug(category.slug)
+      .map((item) => toSubCategoryCard(item, { categorySlug: category.slug })),
+    ...catalog.getProductsByCategorySlug(category.slug)
       .filter((product) => product.subCategoryId === null)
       .map((product) => toProductCard(product)),
   ].slice(0, 4)
   const heroSlides = [
     {
-      id: `${subCategory.slug}-hero-main`,
-      title: `${subCategory.name} - Strength in Every Structure.`,
-      imageSrc: subCategory.image,
-    },
-    {
-      id: `${subCategory.slug}-hero-detail`,
-      title: subCategory.description,
-      imageSrc: subCategory.image,
-    },
-    {
-      id: `${subCategory.slug}-hero-overview`,
-      title: `Explore ${subCategory.name} products.`,
-      imageSrc: subCategory.image,
+      id: `${subCategory.slug}-hero`,
+      title: subCategory.carouselText || subCategory.description || `${subCategory.name} - Strength in Every Structure.`,
+      imageSrc: subCategory.carouselImage || subCategory.image,
     },
   ]
 
@@ -90,7 +78,7 @@ export default function ProductsPage() {
         <Container>
           <div className="text-center">
             <PillTag>Request Data Sheet</PillTag>
-            <h2 className="type-2 mt-8">Other Products</h2>
+            <h2 className="type-2 mt-8">Related Products of {category.name}</h2>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">

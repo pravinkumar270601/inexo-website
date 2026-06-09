@@ -8,6 +8,9 @@ const ProductCategories = lazy(() => import('@/pages/ProductCategories'))
 const ProductsPage = lazy(() => import('@/pages/ProductsPage'))
 const ProductDetailPage = lazy(() => import('@/pages/ProductDetailPage'))
 const SolutionsPage = lazy(() => import('@/pages/SolutionsPage'))
+const NewsEventsPage = lazy(() => import('@/pages/NewsEventsPage'))
+const CareersPage = lazy(() => import('@/pages/CareersPage'))
+const ContactUsPage = lazy(() => import('@/pages/ContactUsPage'))
 
 function RouteFallback() {
   return (
@@ -31,6 +34,9 @@ export function AppRouter() {
           <Route path="/products/:categorySlug/:subCategorySlug" element={<ProductsPage />} />
           <Route path="/product/:productSlug" element={<ProductDetailPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
+          <Route path="/news-events" element={<NewsEventsPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/contact-us" element={<ContactUsPage />} />
         </Route>
       </Routes>
     </Suspense>

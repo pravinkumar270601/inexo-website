@@ -171,6 +171,24 @@
   --line-height-products-benefits-list: 45px;
   --font-weight-products-benefits-list: 400;
   --letter-spacing-products-benefits-list: 0px;
+
+  /* Careers description typography */
+  --font-family-careers-body: var(--font-family-primary-sans);
+  --font-size-careers-body: 32px;
+  --line-height-careers-body: 64px;
+  --font-weight-careers-body: 400;
+
+  /* Careers card title typography */
+  --font-family-careers-card-title: var(--font-family-primary-sans);
+  --font-size-careers-card-title: 32px;
+  --line-height-careers-card-title: 48px;
+  --font-weight-careers-card-title: 700;
+
+  /* FAQ question typography */
+  --font-family-faq-question: Avenir, var(--font-family-primary-sans);
+  --font-size-faq-question: 24px;
+  --line-height-faq-question: 36px;
+  --font-weight-faq-question: 800;
 }
 
 @media (max-width: 1279px) {
@@ -194,6 +212,12 @@
     --font-size-body-on-dark: 17px;
     --font-size-button-primary: 20px;
     --font-size-navigation-menu: 20px;
+    --font-size-careers-body: 24px;
+    --line-height-careers-body: 48px;
+    --font-size-careers-card-title: 24px;
+    --line-height-careers-card-title: 36px;
+    --font-size-faq-question: 20px;
+    --line-height-faq-question: 30px;
   }
 }
 
@@ -218,5 +242,12 @@
     --font-size-body-on-dark: 16px;
     --font-size-button-primary: 18px;
     --font-size-navigation-menu: 18px;
+    --font-size-careers-body: 18px;
+    --line-height-careers-body: 32px;
+    --font-size-careers-card-title: 18px;
+    --line-height-careers-card-title: 26px;
+    --font-size-faq-question: 16px;
+    --line-height-faq-question: 24px;
   }
 }
+

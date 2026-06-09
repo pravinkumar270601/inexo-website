@@ -6,9 +6,9 @@ import { Container } from '@/components/common/Container'
 const navItems = [
   { label: 'Products', path: '/products' },
   { label: 'Solutions', path: '/solutions' },
-  { label: 'News & Events' },
-  { label: 'Contact us' },
-  { label: 'Careers' },
+  { label: 'News & Events', path: '/news-events' },
+  { label: 'Contact us', path: '/contact-us' },
+  { label: 'Careers', path: '/careers' },
 ]
 
 export function Nav() {
@@ -53,8 +53,15 @@ export function Nav() {
     updateIndicator()
     window.addEventListener('resize', updateIndicator)
 
+    if (document.fonts) {
+      document.fonts.ready.then(updateIndicator)
+    }
+
+    const timer = setTimeout(updateIndicator, 150)
+
     return () => {
       window.removeEventListener('resize', updateIndicator)
+      clearTimeout(timer)
     }
   }, [pathname])
 

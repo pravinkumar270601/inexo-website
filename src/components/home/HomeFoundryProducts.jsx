@@ -1,9 +1,12 @@
 import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { SectionLabel } from '@/components/common/SectionLabel'
-import { homeProducts } from '@/data/productCatalog'
+import { useProductCatalogQuery } from '@/hooks/useProductCatalogQuery'
 
 export function HomeFoundryProducts() {
+  const { data: catalog } = useProductCatalogQuery()
+  const homeProducts = catalog?.homeProducts ?? []
+
   return (
     <section className="bg-white py-16 sm:py-20 lg:py-[120px]">
       <Container>

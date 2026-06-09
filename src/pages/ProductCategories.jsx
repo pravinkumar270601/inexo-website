@@ -3,50 +3,47 @@ import searchIcon from '@/assets/images/brand/search_Icon.svg'
 import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { ProductsHero } from '@/components/products/ProductsHero'
-import {
-  categories,
-  getCategoryBySlug,
-  getProductsByCategorySlug,
-  getSubCategoriesByCategorySlug,
-  toCategoryCard,
-  toProductCard,
-  toSubCategoryCard,
-} from '@/data/productCatalog'
+import { toCategoryCard, toProductCard, toSubCategoryCard } from '@/data/productCatalog'
+import { useProductCatalogQuery } from '@/hooks/useProductCatalogQuery'
+import { PillTag } from '@/components/common/PillTag'
 
 export default function ProductCategories() {
   const { categorySlug } = useParams()
-  const category = getCategoryBySlug(categorySlug)
+  const { data: catalog, isLoading } = useProductCatalogQuery()
+  const category = catalog?.getCategoryBySlug(categorySlug)
+
+  if (isLoading) {
+    return null
+  }
 
   if (!category) {
     return <Navigate replace to="/products" />
   }
 
-  const categorySubCategories = getSubCategoriesByCategorySlug(category.slug).map((subCategory) => (
-    toSubCategoryCard(subCategory)
+  const categorySubCategories = catalog.getSubCategoriesByCategorySlug(category.slug).map((subCategory) => (
+    toSubCategoryCard(subCategory, { categorySlug: category.slug })
   ))
-  const directCategoryProducts = getProductsByCategorySlug(category.slug)
+  const directCategoryProducts = catalog.getProductsByCategorySlug(category.slug)
     .filter((product) => product.subCategoryId === null)
     .map((product) => toProductCard(product))
   const categoryCards = [...categorySubCategories, ...directCategoryProducts]
-  const relatedCategories = categories
+
+  const corePasteProduct = catalog.getProductBySlug('core-paste-05')
+  const relatedCategories = catalog.categories
     .filter((item) => item.id !== category.id)
-    .slice(0, 4)
     .map((item) => toCategoryCard(item, { ctaLabel: 'View Products' }))
+
+  const relatedItems = [
+    ...relatedCategories,
+    ...(corePasteProduct ? [toProductCard(corePasteProduct)] : [])
+  ].slice(0, 4)
+
+  const relatedSectionTitle = category.slug === 'spotex' ? 'Other Products' : 'Related Products'
   const heroSlides = [
     {
-      id: `${category.slug}-hero-main`,
-      title: `${category.name} - Strength in Every Structure.`,
-      imageSrc: category.image,
-    },
-    {
-      id: `${category.slug}-hero-detail`,
-      title: category.description,
-      imageSrc: category.image,
-    },
-    {
-      id: `${category.slug}-hero-overview`,
-      title: `Explore ${category.name} categories and products.`,
-      imageSrc: category.image,
+      id: `${category.slug}-hero`,
+      title: category.carouselText || category.description || `${category.name} - Strength in Every Structure.`,
+      imageSrc: category.carouselImage || category.image,
     },
   ]
 
@@ -88,12 +85,15 @@ export default function ProductCategories() {
       <section className="bg-[#f4f4f4] py-16 sm:py-20 lg:py-[120px]">
         <Container>
           <div className="text-center">
-            <h2 className="type-2 mt-8">Other Categories</h2>
+            {categorySubCategories.length === 0 ? (
+              <PillTag>Request Data Sheet</PillTag>
+            ) : null}
+            <h2 className="type-2 mt-8">{relatedSectionTitle}</h2>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-            {relatedCategories.map((relatedCategory) => (
-              <FoundryProductCard key={relatedCategory.id} product={relatedCategory} />
+            {relatedItems.map((item) => (
+              <FoundryProductCard key={item.id} product={item} />
             ))}
           </div>
         </Container>

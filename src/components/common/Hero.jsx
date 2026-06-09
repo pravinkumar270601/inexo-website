@@ -14,13 +14,13 @@ const defaultSlides = [
   {
     id: 2,
     title: 'Precision Solutions For Modern Foundry Operations',
-    ctaLabel: 'Watch Our Video',
+    // ctaLabel: 'Watch Our Video',
     imageSrc: facilityImage,
   },
   {
     id: 3,
     title: 'Reliable Engineering Backed By Proven Performance',
-    ctaLabel: 'Watch Our Video',
+    // ctaLabel: 'Watch Our Video',
     // videoSrc: '/videos/inexo-foundry-3.mp4',
     // poster: heroPoster,
     imageSrc: facilityImage,

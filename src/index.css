@@ -336,3 +336,17 @@ input {
   font-size: 0.85em;
   font-weight: 600;
 }
+
+/* Gallery Lightbox Modal Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 250ms ease-out forwards;
+}

@@ -3,7 +3,7 @@ import heroArrowRight from '@/assets/images/home/heroarrow-right.svg'
 import { Container } from '@/components/common/Container'
 import { FoundryProductCard } from '@/components/common/FoundryProductCard'
 import { SectionLabel } from '@/components/common/SectionLabel'
-import { featuredProducts } from '@/data/productCatalog'
+import { useProductCatalogQuery } from '@/hooks/useProductCatalogQuery'
 
 function getCardsPerPage(width) {
   if (width < 640) {
@@ -22,6 +22,8 @@ function getCardsPerPage(width) {
 }
 
 export function ProductsFeaturedSection() {
+  const { data: catalog } = useProductCatalogQuery()
+  const featuredProducts = catalog?.featuredProducts ?? []
   const [cardsPerPage, setCardsPerPage] = useState(() => {
     if (typeof window === 'undefined') {
       return 4
@@ -43,7 +45,7 @@ export function ProductsFeaturedSection() {
     }
   }, [])
 
-  const totalPages = Math.ceil(featuredProducts.length / cardsPerPage)
+  const totalPages = Math.max(1, Math.ceil(featuredProducts.length / cardsPerPage))
 
   useEffect(() => {
     if (currentPage > totalPages - 1) {

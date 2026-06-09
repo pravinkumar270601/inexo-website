@@ -378,3 +378,35 @@
   padding: 0 32px;
   white-space: nowrap;
 }
+
+.careers-body-preset,
+.type-careers-body {
+  color: var(--color-text-careers-body);
+  font-family: var(--font-family-careers-body);
+  font-size: var(--font-size-careers-body);
+  font-style: normal;
+  font-weight: var(--font-weight-careers-body);
+  line-height: var(--line-height-careers-body);
+}
+
+.careers-card-title-preset,
+.type-careers-card-title {
+  color: var(--color-text-careers-card-title);
+  text-align: center;
+  font-family: var(--font-family-careers-card-title);
+  font-size: var(--font-size-careers-card-title);
+  font-style: normal;
+  font-weight: var(--font-weight-careers-card-title);
+  line-height: var(--line-height-careers-card-title);
+}
+
+.faq-question-preset,
+.type-faq-question {
+  color: var(--color-text-faq-question);
+  font-family: var(--font-family-faq-question);
+  font-size: var(--font-size-faq-question);
+  font-style: normal;
+  font-weight: var(--font-weight-faq-question);
+  line-height: var(--line-height-faq-question);
+}
+
